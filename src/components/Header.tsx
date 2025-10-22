@@ -37,7 +37,7 @@ export default function Header() {
           <a href="#experience" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">02.</span> Experience</a>
           <a href="#work" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">03.</span> Work</a>
           <a href="#contact" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">04.</span> Contact</a>
-          <Link href="/resume" className="hover:text-[#64ffda] transition border border-[#64ffda] rounded px-4 py-2"><span className="text-[#64ffda]">05.</span> Resume</Link>
+          <a href="/api/resume" download className="hover:text-[#64ffda] transition border border-[#64ffda] rounded px-4 py-2" aria-label="Download resume"><span className="text-[#64ffda]">05.</span> Resume</a>
         </nav>
 
         {/* Mobile menu toggle */}
