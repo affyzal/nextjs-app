@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -13,14 +14,23 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between h-16">
         {/* Branding / logo */}
         <Link href="/" className="text-xl font-bold hover:text-indigo-400 transition">
-          Afzal Miah
+          <Image
+            className="dark:invert"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={100}
+            height={20}
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden sm:flex gap-6 text-sm">
-          <Link href="/projects" className="hover:text-indigo-400 transition">Projects</Link>
-          <Link href="/about" className="hover:text-indigo-400 transition">About</Link>
-          <Link href="/contact" className="hover:text-indigo-400 transition">Contact</Link>
+          <Link href="/about" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">01.</span> About</Link>
+          <Link href="/experience" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">02.</span> Experience</Link>
+          <Link href="/work" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">03.</span> Work</Link>
+          <Link href="/contact" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">04.</span> Contact</Link>
+          <Link href="/resume" className="hover:text-[#64ffda] transition border border-[#64ffda] rounded px-4 py-2"><span className="text-[#64ffda]">05.</span> Resume</Link>
         </nav>
 
         {/* Mobile menu toggle */}
