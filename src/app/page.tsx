@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen bg-zinc-50 dark:bg-[#0a192f]">
       <Header />
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-[#0a192f]">
-        <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-[#0a192f] sm:items-start">
+      <div className="flex font-sans">
+        <main className="w-full max-w-3xl flex-col items-center pt-16 px-16 mx-auto bg-zinc-50 dark:bg-[#0a192f] sm:items-start">
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
             <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-[#64ffda]">
               Hello there, My name is
