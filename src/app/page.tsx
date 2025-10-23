@@ -111,9 +111,36 @@ export default function Home() {
       />
 
       {/* Footer */}
-      <footer className="w-full py-6 border-t border-slate-200 dark:border-slate-800 text-center text-sm text-slate-500">
-        <p>&copy; {new Date().getFullYear()} Afzal Miah. Crafted with ❤️ and Next.js.</p>
+      <footer className="mt-20 border-t border-slate-800 bg-slate-900/80 backdrop-blur text-zinc-400 text-sm">
+        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>&copy; {new Date().getFullYear()} Afzal Miah. Crafted with ❤️ and <span className="text-[#64ffda]">Next.js</span>.</p>
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/affyzal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#64ffda] transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/afzalmiah/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#64ffda] transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="mailto:affyzal@gmail.com"
+              className="hover:text-[#64ffda] transition-colors"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
       </footer>
+
 
 
     </main>
