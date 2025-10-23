@@ -50,18 +50,18 @@ const jobs: Job[] = [
   {
     title: "Software Engineer",
     company: "Trubshaw Cumberlege",
-    period: "Aug 2022 – Present",
+    period: "Aug 2022 - Present",
     bullets: ["Delivered user-focused product features across web and mobile, prioritizing accessibility, performance, and UX quality.",
       "Built and maintained RESTful APIs in Ruby on Rails, powering rich, data-driven interfaces across multiple platforms.",
       "Implemented Docker-based development and CI/CD pipelines using GitHub Actions, automating testing and builds for faster, more reliable releases.",
       "Integrated Mapbox visualizations to create interactive user journeys, improving engagement and understanding of spatial data.",
-      "Owned features end-to-end — from design to QA — reducing handoff delays and accelerating release cycles by ~20%."
+      "Owned features end-to-end - from design to QA - reducing handoff delays and accelerating release cycles by ~20%."
     ],
   },
   {
     title: "Junior Software Developer",
     company: "Trubshaw Cumberlege",
-    period: "Aug 2021 – Aug 2022",
+    period: "Aug 2021 -Aug 2022",
     bullets: [
       "Actively involved in feature prototyping and product planning, collaborating with product and design teams to develop user-centric solutions.",
       "Designed scalable data models and background workers in Rails, improving query efficiency and reducing API response times significantly.",

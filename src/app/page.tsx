@@ -66,7 +66,7 @@ export default function Home() {
               I like to build things.
             </motion.h1>
             <motion.p variants={item} className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              Software Engineer building meaningful, user-first digital products — currently shaping a map-based management platform at <a href="https://www.trubshaw.co/team-sherpa" target="_blank" rel="noopener noreferrer" className="text-[#64ffda]">Trubshaw Cumberlege</a>.
+              Software Engineer building meaningful, user-first digital products - currently shaping a map-based management platform at <a href="https://www.trubshaw.co/team-sherpa" target="_blank" rel="noopener noreferrer" className="text-[#64ffda]">Trubshaw Cumberlege</a>.
             </motion.p>
           </div>
         </div>

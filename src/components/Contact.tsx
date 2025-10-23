@@ -54,7 +54,7 @@ export default function Contact({
             </motion.h2>
             <motion.p variants={item} className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
               I’m always interested in new opportunities, collaborations, or just chatting about tech and design.
-              Whether you have a question, a project, or just want to say hi — my inbox is open!            
+              Whether you have a question, a project, or just want to say hi - my inbox is open!            
             </motion.p>
             <div className="flex items-center gap-6 mt-16">
               {/* Email button */}
