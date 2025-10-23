@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer"
 import { motion, Variants } from "framer-motion"
 import About from "@/components/About"
 import Experience from "@/components/Experience"
+import Contact from "@/components/Contact"
 
 export default function Home() {
   const { ref: homeRef, inView: homeInView } = useInView({
@@ -104,24 +105,12 @@ export default function Home() {
       </motion.section>
 
       {/* Contact Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeIn}
-        transition={{ duration: 0.6 }}
-        id="contact" 
-        className="min-h-screen flex items-center"
-      >
-        <div className="w-full max-w-3xl mx-auto px-16">
-          <h2 className="flex items-center gap-2 text-2xl font-semibold text-black dark:text-zinc-50 mb-8">
-            <span className="text-[#64ffda]">04.</span> What&apos;s Next?
-          </h2>
-          <div className="text-zinc-600 dark:text-zinc-400">
-            {/* Add your contact content here */}
-            <p className="mb-4">Get in touch section coming soon...</p>
-          </div>
-        </div>
-      </motion.section>
+      <Contact
+        aboutRef={aboutRef}
+        aboutInView={aboutInView}
+      />
+
+
     </main>
-  );
+  )
 }
