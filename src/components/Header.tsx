@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { House, Menu, X } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -16,30 +18,44 @@ export default function Header() {
     })
   }
 
+  const pathname = usePathname()
+
+  const onHomeClick: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
+    if (pathname === "/") {
+      // Stay on the same page, smooth scroll, and clear the hash
+      e.preventDefault()
+      scrollToTop()
+      // Remove #... from the URL without reloading
+      history.replaceState(null, "", "/")
+    }
+    // else: allow Link to navigate to "/"
+  };
+
+
   return (
     <header className="bg-slate-900/95 backdrop-blur sticky top-0 z-50 border-b border-slate-800 text-white">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between h-16">
         {/* Branding / logo */}
-        <button onClick={scrollToTop} className="text-xl font-bold hover:text-indigo-400 transition">
-          <Image
-            className="dark:invert"
-            src="/next.svg"
-            alt="Next.js logo"
-            width={100}
-            height={20}
-            priority
-          />
-        </button>
-
+        <motion.a
+          href="/"
+          onClick={onHomeClick}
+          whileHover={{ scale: 1.25 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 260, damping: 16 }}
+          className="inline-flex items-center justify-center"
+          style={{ lineHeight: 0, transformOrigin: "center" }}
+          aria-label="Scroll to top"
+        >
+          <House color="#64ffda" className="w-6 h-6" />
+        </motion.a>
         {/* Desktop nav */}
         <nav className="hidden sm:flex gap-6 text-sm">
-          <a href="#about" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">01.</span> About</a>
-          <a href="#experience" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">02.</span> Experience</a>
-          <a href="#work" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">03.</span> Work</a>
-          <a href="#contact" className="hover:text-[#64ffda] transition border-slate-800 rounded px-4 py-2"><span className="text-[#64ffda]">04.</span> Contact</a>
-          <a href="/api/resume" download className="hover:text-[#64ffda] transition border border-[#64ffda] rounded px-4 py-2" aria-label="Download resume"><span className="text-[#64ffda]">05.</span> Resume</a>
+          <motion.a href="#about" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 260, damping: 16 }} className="border-slate-800 rounded px-4 py-2 hover:text-[#64ffda]"><span className="text-[#64ffda]">01.</span> About</motion.a>
+          <motion.a href="#experience" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 260, damping: 16 }} className="border-slate-800 rounded px-4 py-2 hover:text-[#64ffda]"><span className="text-[#64ffda]">02.</span> Experience</motion.a>
+          <motion.a href="#work" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 260, damping: 16 }} className="border-slate-800 rounded px-4 py-2 hover:text-[#64ffda]"><span className="text-[#64ffda]">03.</span> Work</motion.a>
+          <motion.a href="#contact" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 260, damping: 16 }} className="border-slate-800 rounded px-4 py-2 hover:text-[#64ffda]"><span className="text-[#64ffda]">04.</span> Contact</motion.a>
+          <motion.a href="/api/resume" download whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 260, damping: 16 }} className="border border-[#64ffda] rounded px-4 py-2 hover:text-[#64ffda]" aria-label="Download resume"><span className="text-[#64ffda]">05.</span> Resume</motion.a>
         </nav>
-
         {/* Mobile menu toggle */}
         <button
           className="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"

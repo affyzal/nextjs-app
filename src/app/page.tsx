@@ -1,8 +1,9 @@
 "use client"
 import Header from "@/components/Header"
 import { useInView } from "react-intersection-observer"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import About from "@/components/About"
+import Experience from "@/components/Experience"
 
 export default function Home() {
   const { ref: homeRef, inView: homeInView } = useInView({
@@ -20,6 +21,24 @@ export default function Home() {
     visible: { opacity: 1, y: 0 }
   };
 
+  const container: Variants = {
+    hidden:  { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1, y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+        when: "beforeChildren",
+        staggerChildren: 0.08,
+      },
+    },
+  }
+
+  const item: Variants = {
+    hidden:  { opacity: 0, y: 12 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  }
+
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-[#0a192f]">
       <Header />
@@ -29,25 +48,25 @@ export default function Home() {
         ref={homeRef}
         initial="hidden"
         animate={homeInView ? "visible" : "hidden"}
-        variants={fadeIn}
         transition={{ duration: 0.6 }}
         id="home" 
         className="min-h-screen flex items-center"
+        variants={container}
       >
         <div className="w-full max-w-3xl mx-auto px-16">
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-[#64ffda]">
+            <motion.h2 variants={item} className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-[#64ffda]">
               Hello there, My name is
-            </h2>
-            <h1 className="max-w-3xl text-6xl font-semibold tracking-tight text-black dark:text-zinc-50">
+            </motion.h2>
+            <motion.h1 variants={item} className="max-w-3xl text-6xl font-semibold tracking-tight text-black dark:text-zinc-50">
               Afzal Miah.
-            </h1>
-            <h1 className="max-w-3xl text-6xl font-semibold tracking-tight text-zinc-600 dark:text-zinc-400">
+            </motion.h1>
+            <motion.h1 variants={item}  className="max-w-3xl text-6xl font-semibold tracking-tight text-zinc-600 dark:text-zinc-400">
               I like to build things.
-            </h1>
-            <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            </motion.h1>
+            <motion.p variants={item} className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
               Software Engineer building meaningful, user-first digital products — currently shaping a map-based management platform at <a href="https://www.trubshaw.co/team-sherpa" target="_blank" rel="noopener noreferrer" className="text-[#64ffda]">Trubshaw Cumberlege</a>.
-            </p>
+            </motion.p>
           </div>
         </div>
       </motion.section>
@@ -56,27 +75,13 @@ export default function Home() {
       <About
         aboutRef={aboutRef}
         aboutInView={aboutInView}
-        fadeIn={fadeIn}
       />
+
       {/* Experience Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeIn}
-        transition={{ duration: 0.6 }}
-        id="experience" 
-        className="min-h-screen flex items-center"
-      >
-        <div className="w-full max-w-3xl mx-auto px-16">
-          <h2 className="flex items-center gap-2 text-2xl font-semibold text-black dark:text-zinc-50 mb-8">
-            <span className="text-[#64ffda]">02.</span> Where I&apos;ve Worked
-          </h2>
-          <div className="text-zinc-600 dark:text-zinc-400">
-            {/* Add your experience content here */}
-            <p className="mb-4">Experience section coming soon...</p>
-          </div>
-        </div>
-      </motion.section>
+      <Experience
+        aboutRef={aboutRef}
+        aboutInView={aboutInView}
+      />
 
       {/* Work Section */}
       <motion.section
