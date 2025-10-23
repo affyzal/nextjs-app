@@ -43,7 +43,7 @@ export default function Home() {
               Afzal Miah.
             </h1>
             <h1 className="max-w-3xl text-6xl font-semibold tracking-tight text-zinc-600 dark:text-zinc-400">
-              I attempt to build useful things.
+              I like to build things.
             </h1>
             <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
               Software Engineer building meaningful, user-first digital products — currently shaping a map-based management platform at <a href="https://www.trubshaw.co/team-sherpa" target="_blank" rel="noopener noreferrer" className="text-[#64ffda]">Trubshaw Cumberlege</a>.
