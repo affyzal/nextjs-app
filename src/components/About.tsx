@@ -83,7 +83,7 @@ export default function About({
 
           <motion.div className="relative group" variants={item}>
             <div
-              className="relative inline-block"
+              className="relative inline-block transition-transform duration-300 ease-out group-hover:scale-[1.03]"
               style={{ boxShadow: "0 0 30px 2px rgba(100, 255, 218, 0.55)", borderRadius: 12 }}
             >
               <div className="relative w-full max-w-xs bg-[#64ffda]/10 rounded-xl overflow-hidden">
@@ -99,6 +99,7 @@ export default function About({
               </div>
             </div>
           </motion.div>
+
 
         </div>
       </div>

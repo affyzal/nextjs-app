@@ -61,9 +61,9 @@ export default function Contact({
               <motion.a
                 variants={item}
                 href="mailto:affyzal@gmail.com"
-                whileHover={{ scale: 1.04, boxShadow: "0 0 20px 4px rgba(100,255,218,0.25)" }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
+                whileHover={{ scale: 1.1, boxShadow: "0 0 20px 4px rgba(100,255,218,0.25)" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 260, damping: 16 }}
                 className="inline-block px-5 py-2 border border-[#64ffda] rounded text-[#64ffda] font-medium hover:bg-[#64ffda]/10 transition origin-top"
                 style={{ transformOrigin: "top center" }}
               >
@@ -76,9 +76,9 @@ export default function Contact({
                 href="https://www.linkedin.com/in/afzal-miah/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.04, boxShadow: "0 0 20px 4px rgba(100,255,218,0.25)" }}
+                whileHover={{ scale: 1.1, boxShadow: "0 0 20px 4px rgba(100,255,218,0.25)" }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
+                transition={{ type: "spring", stiffness: 260, damping: 16 }}
                 className="w-10 h-10 flex items-center justify-center rounded border border-[#64ffda]/70 bg-[#0077B5] hover:bg-[#64ffda] text-white transition"
                 aria-label="LinkedIn"
               >
@@ -91,9 +91,9 @@ export default function Contact({
                 href="https://github.com/affyzal"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.04, boxShadow: "0 0 20px 4px rgba(100,255,218,0.25)" }}
+                whileHover={{ scale: 1.1, boxShadow: "0 0 20px 4px rgba(100,255,218,0.25)" }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
+                transition={{ type: "spring", stiffness: 260, damping: 16 }}
                 className="w-10 h-10 flex items-center justify-center rounded border border-[#64ffda]/70 bg-[#171515] hover:bg-[#64ffda] text-white hover:text-[#0a192f] transition"
                 aria-label="GitHub"
               >
