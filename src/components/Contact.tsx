@@ -49,8 +49,8 @@ export default function Contact({
       >
         <div className="w-full max-w-3xl mx-auto px-16">
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <motion.h2 variants={item} className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-[#64ffda]">
-              04. Let&apos;s Build Something Together
+            <motion.h2 variants={item} className="max-w-xs text-3xl font-semibold leading-10 tracking-tight">
+              <span className="text-[#64ffda]">04. </span>Let&apos;s Build Something Together
             </motion.h2>
             <motion.p variants={item} className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
               I’m always interested in new opportunities, collaborations, or just chatting about tech and design.
