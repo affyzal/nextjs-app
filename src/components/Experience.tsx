@@ -51,12 +51,11 @@ const jobs: Job[] = [
     title: "Software Engineer",
     company: "Trubshaw Cumberlege",
     period: "Aug 2022 – Present",
-    bullets: [
-      "Delivered user-focused product features across web and mobile, prioritizing UX and performance.",
-      "Built and maintained RESTful APIs in Ruby on Rails supporting data-rich interfaces.",
-      "Implemented Docker + CI/CD with GitHub Actions, automating tests and builds.",
-      "Integrated Mapbox visualizations improving spatial data engagement.",
-      "Owned features end-to-end, accelerating release cycles ≈ 20%.",
+    bullets: ["Delivered user-focused product features across web and mobile, prioritizing accessibility, performance, and UX quality.",
+      "Built and maintained RESTful APIs in Ruby on Rails, powering rich, data-driven interfaces across multiple platforms.",
+      "Implemented Docker-based development and CI/CD pipelines using GitHub Actions, automating testing and builds for faster, more reliable releases.",
+      "Integrated Mapbox visualizations to create interactive user journeys, improving engagement and understanding of spatial data.",
+      "Owned features end-to-end — from design to QA — reducing handoff delays and accelerating release cycles by ~20%."
     ],
   },
   {
@@ -64,9 +63,41 @@ const jobs: Job[] = [
     company: "Trubshaw Cumberlege",
     period: "Aug 2021 – Aug 2022",
     bullets: [
-      "Collaborated on feature prototyping with product and design teams.",
-      "Designed scalable data models and background workers improving query efficiency.",
-      "Supported data collaboration with Napier University to drive UX insights.",
+      "Actively involved in feature prototyping and product planning, collaborating with product and design teams to develop user-centric solutions.",
+      "Designed scalable data models and background workers in Rails, improving query efficiency and reducing API response times significantly.",
+      "Supported data collaboration with Napier University, enabling academic research access and uncovering usage insights that guided key UX improvements and boosted retention."
+    ],
+  },
+]
+
+const fulljobs: Job[] = [
+  {
+    title: "Software Engineer",
+    company: "Trubshaw Cumberlege",
+    period: "Aug 2022 – Present",
+    bullets: [
+      "Delivered user-focused product features across web and mobile platforms, prioritizing UX quality, accessibility, and performance.",
+      "Partnered with PMs and designers to translate concepts into high-impact user experiences, increasing feature adoption and reducing usability issues reported during QA.",
+      "Built and maintained RESTful APIs in Ruby on Rails, supporting rich, data-driven product interfaces.",
+      "Implemented Docker-based development environments and configured CI/CD pipelines using GitHub Actions, automating unit tests, linting, and build validation for efficient releases.",
+      "Integrated Mapbox visualizations to create interactive user journeys, improving understanding and engagement with spatial data.",
+      "Owned features end-to-end - from scoping and design to QA and iteration - reducing handoff delays and accelerating release cycles by ~20%.",
+      "Contributed to roadmap and sprint planning, aligning product priorities with user outcomes and design goals.",
+      "Improved frontend performance through caching, reducing load times by ~30% and enhancing perceived responsiveness.",
+      "Built an offline queuing and sync system enabling app functionality without internet access, automatically processing pending requests on reconnection to enhance reliability and usability in low-connectivity environments."
+    ],
+  },
+  {
+    title: "Junior Software Developer",
+    company: "Trubshaw Cumberlege",
+    period: "Aug 2021 – Aug 2022",
+    bullets: [
+      "Actively involved in feature prototyping and product planning, collaborating with product and design teams to develop user-centric solutions.",
+      "Designed scalable data models and background workers in Rails, improving query efficiency and reducing API response times significantly.",
+      "Supported data collaboration with Napier University, enabling academic research access and uncovering usage insights that guided key UX improvements and boosted retention.",
+      "Developed and tested user-facing features using Ruby on Rails and React, ensuring UX consistency and accessibility.",
+      "Participated in architecture discussions to define API design, data flow, and maintainability.",
+      "Supported Agile sprint cycles, retrospectives, and QA processes to improve product quality and delivery efficiency.",
     ],
   },
 ]
