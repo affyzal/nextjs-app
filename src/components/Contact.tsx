@@ -72,6 +72,7 @@ export default function Contact({
 
               {/* LinkedIn Button */}
               <motion.a
+                variants={item}
                 href="https://www.linkedin.com/in/afzal-miah/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,6 +87,7 @@ export default function Contact({
 
               {/* GitHub Button */}
               <motion.a
+                variants={item}
                 href="https://github.com/affyzal"
                 target="_blank"
                 rel="noopener noreferrer"
