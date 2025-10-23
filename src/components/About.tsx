@@ -36,6 +36,10 @@ export default function About({
     "Ruby on Rails",
     "Next.js",
     "React Native",
+    "Docker",
+    "PostgreSQL",
+    "Git & GitHub",
+    "Tailwind CSS",
   ]
 
   return (
@@ -57,17 +61,34 @@ export default function About({
 
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2 text-zinc-600 dark:text-zinc-400 space-y-4">
-            <motion.p variants={item}>
-              Hey, I’m Afzal - a full-stack software engineer based in Edinburgh who loves building things that feel great to use.
-            </motion.p>
-            <motion.p variants={item}>
-              I’m a full-stack developer with a soft spot for React, Ruby on Rails, and a clean, purposeful user experience.
-              Whether it’s crafting an interactive Mapbox visualization or tightening up accessibility details, I love bridging design and engineering.
-            </motion.p>
-            <motion.p variants={item}>
-              I’m currently at Trubshaw Cumberlege, where I help shape user-centric features across web and mobile. I care a lot about good design, maintainable code, and those little UI details that make you smile.
-            </motion.p>
-            <motion.p variants={item}>Here are a few technologies I&apos;ve been working with recently:</motion.p>
+          <motion.p variants={item}>
+            hey, I’m a full-stack software engineer with a soft spot for 
+            <span className="text-[#64ffda]"> React</span>, 
+            <span className="text-[#64ffda]"> Ruby on Rails</span>, and 
+            <span className="text-[#64ffda]">clean, purposeful user experiences</span>.
+            Whether it’s crafting an interactive <span className="text-[#64ffda]">Mapbox</span> visualization or tightening up <span className="text-[#64ffda]">accessibility</span> details, 
+            I love bridging <span className="text-[#64ffda]">design</span> and <span className="text-[#64ffda]">engineering</span>.
+          </motion.p>
+          <motion.p variants={item}>
+            I believe the best software feels invisible - 
+            <span className="text-[#64ffda]"> thoughtful interfaces</span>, 
+            <span className="text-[#64ffda]"> fast interactions</span>, 
+            and code that <span className="text-[#64ffda]">scales gracefully</span>.
+          </motion.p>
+          <motion.p variants={item}>
+            I’m currently at <span className="text-[#64ffda]">Trubshaw Cumberlege</span>, where I help shape 
+            <span className="text-[#64ffda]"> user-centric features</span> across web and mobile. 
+            I care about <span className="text-[#64ffda]">good design</span>, 
+            <span className="text-[#64ffda]">maintainable code</span>, and those 
+            <span className="text-[#64ffda]"> little UI details that make you smile</span>.
+          </motion.p>
+          <motion.p variants={item}>
+            Here are a few technologies I’ve been working with recently — and I’m always exploring 
+            <span className="text-[#64ffda]"> new tools</span> that make building 
+            <span className="text-[#64ffda]"> delightful software</span> faster and cleaner:
+          </motion.p>
+
+
 
             <motion.ul
               className="grid grid-cols-2 gap-2 mt-4"
