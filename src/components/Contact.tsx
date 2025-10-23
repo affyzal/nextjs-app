@@ -1,7 +1,6 @@
 // components/About.tsx
 "use client";
 import { motion, type Variants } from "framer-motion";
-import { Git, Github, Linkedin, Menu, X } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const container: Variants = {
