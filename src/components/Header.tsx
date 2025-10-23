@@ -6,6 +6,7 @@ import { House, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import type { Variants } from "framer-motion";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
