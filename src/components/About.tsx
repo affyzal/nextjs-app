@@ -8,9 +8,9 @@ export default function About({
   aboutInView,
   fadeIn,
 }: {
-  aboutRef: RefObject<HTMLElement>;
-  aboutInView: boolean;
-  fadeIn: Record<string, any>;
+  aboutRef: (node?: HTMLElement | null) => void
+  aboutInView: boolean
+  fadeIn: Record<string, any>
 }) {
   return (
       <motion.section

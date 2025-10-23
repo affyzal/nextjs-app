@@ -54,7 +54,6 @@ export default function Home() {
 
       {/* About Section */}
       <About
-        //ts-expect-error
         aboutRef={aboutRef}
         aboutInView={aboutInView}
         fadeIn={fadeIn}
