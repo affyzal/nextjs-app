@@ -110,6 +110,11 @@ export default function Home() {
         aboutInView={aboutInView}
       />
 
+      {/* Footer */}
+      <footer className="w-full py-6 border-t border-slate-200 dark:border-slate-800 text-center text-sm text-slate-500">
+        <p>&copy; {new Date().getFullYear()} Afzal Miah. Crafted with ❤️ and Next.js.</p>
+      </footer>
+
 
     </main>
   )

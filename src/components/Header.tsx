@@ -90,12 +90,35 @@ export default function Header() {
       {mobileOpen && (
         <nav className="sm:hidden bg-slate-900 border-t border-slate-800">
           <ul className="px-6 py-4 space-y-3">
-            <li><Link href="/projects" className="block hover:text-indigo-400">Projects</Link></li>
-            <li><Link href="/about" className="block hover:text-indigo-400">About</Link></li>
-            <li><Link href="/contact" className="block hover:text-indigo-400">Contact</Link></li>
+            <li>
+              <Link href="/#about" className="block hover:text-indigo-400" onClick={() => setMobileOpen(false)}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/#experience" className="block hover:text-indigo-400" onClick={() => setMobileOpen(false)}>
+                Experience
+              </Link>
+            </li>
+            <li>
+              <Link href="/#work" className="block hover:text-indigo-400" onClick={() => setMobileOpen(false)}>
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link href="/#contact" className="block hover:text-indigo-400" onClick={() => setMobileOpen(false)}>
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/api/resume" className="block hover:text-indigo-400" onClick={() => setMobileOpen(false)}>
+                Resume
+              </Link>
+            </li>
           </ul>
         </nav>
       )}
+
     </motion.header>
   );
 }
