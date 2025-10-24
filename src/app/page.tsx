@@ -98,9 +98,29 @@ export default function Home() {
             <span className="text-[#64ffda]">03.</span> Some Things I&apos;ve Built
           </h2>
           <div className="text-zinc-600 dark:text-zinc-400">
-            {/* Add your work/projects content here */}
-            <p className="mb-4">Projects section coming soon...</p>
+            <motion.p
+              className="text-lg font-mono text-[#64ffda] animate-cursor-blink"
+              initial={{ width: 0 }}
+              animate={{ 
+                width: ["0ch", "22ch", "22ch", "0ch"],
+                borderRightColor: ["#64ffda", "#64ffda00"], 
+              }} // pause at full width
+              transition={{
+                duration: 8, // longer total cycle
+                times: [0, 0.4, 0.6, 1], // hold full width between 40%–60%
+                ease: "easeInOut",
+                repeat: Infinity,
+              }}
+              style={{
+                overflow: "hidden",
+                whiteSpace: "nowrap",
+                borderRight: "2px solid #64ffda",
+              }}
+            >
+              Projects coming soon...
+            </motion.p>
           </div>
+
         </div>
       </motion.section>
 
