@@ -102,8 +102,7 @@ export default function Home() {
               className="text-lg font-mono text-[#64ffda] animate-cursor-blink"
               initial={{ width: 0 }}
               animate={{ 
-                width: ["0ch", "22ch", "22ch", "0ch"],
-                borderRightColor: ["#64ffda", "#64ffda00"], 
+                width: ["0ch", "22ch", "22ch", "22ch", "0ch", "0ch"],
               }} // pause at full width
               transition={{
                 duration: 8, // longer total cycle
