@@ -183,11 +183,11 @@ export default function Experience({
                   {/* Bullet list */}
                   <motion.ul
                     variants={detailsContainer}
-                    className="list-disc pl-5 space-y-2 text-zinc-600 dark:text-zinc-400"
+                    className="list-none pl-5 space-y-2 text-zinc-600 dark:text-zinc-400"
                   >
                     {job.bullets.map((b) => (
                       <motion.li key={b} variants={detailItem}>
-                        {b}
+                        <span className="text-[#64ffda]">▹</span> {b}
                       </motion.li>
                     ))}
                   </motion.ul>
