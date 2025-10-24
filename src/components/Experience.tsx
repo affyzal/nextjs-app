@@ -13,7 +13,8 @@ const jobsContainer = {
     transition: { when: "beforeChildren", staggerChildren: 0.12 } // stagger between JOBS
   },
 }
-const jobItem = { hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }, }
+
+const jobItem = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.4 } }, }
 // header (title+company+period) block
 const headerBlock = jobItem
 // details list container: starts after header, then staggers bullets

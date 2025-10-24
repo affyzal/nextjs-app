@@ -33,9 +33,9 @@ export default function Header() {
   }
 
   const container: Variants = {
-    hidden:  { opacity: 0, y: 24 },
+    hidden: { opacity: 0 },
     visible: {
-      opacity: 1, y: 0,
+      opacity: 1,
       transition: {
         duration: 0.5,
         ease: [0.22, 1, 0.36, 1],
@@ -44,6 +44,7 @@ export default function Header() {
       },
     },
   }
+
 
   const item: Variants = {
     hidden:  { opacity: 0, y: 12 },
@@ -60,14 +61,14 @@ export default function Header() {
           variants={item}
           href="/"
           onClick={onHomeClick}
-          whileHover={{ scale: 1.25 }}
+          whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 260, damping: 16 }}
           className="inline-flex items-center justify-center"
           style={{ lineHeight: 0, transformOrigin: "center" }}
           aria-label="Scroll to top"
         >
-          <House color="#64ffda" className="w-6 h-6" />
+          <Image src="/logo-transparent.svg" alt="Logo" width={620} height={100} className="w-40 h-40 ml-2 rounded-sm" />
         </motion.a>
         {/* Desktop nav */}
         <nav className="hidden sm:flex gap-6 text-sm">
