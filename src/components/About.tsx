@@ -62,10 +62,10 @@ export default function About({
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2 text-zinc-600 dark:text-zinc-400 space-y-4">
           <motion.p variants={item}>
-            hey, I’m a full-stack software engineer with a soft spot for 
+            Hey, I’m a full-stack software engineer with a soft spot for 
             <span className="text-[#64ffda]"> React</span>, 
             <span className="text-[#64ffda]"> Ruby on Rails</span>, and 
-            <span className="text-[#64ffda]">clean, purposeful user experiences</span>.
+            <span className="text-[#64ffda]"> clean, purposeful user experiences</span>.
             Whether it’s crafting an interactive <span className="text-[#64ffda]">Mapbox</span> visualization or tightening up <span className="text-[#64ffda]">accessibility</span> details, 
             I love bridging <span className="text-[#64ffda]">design</span> and <span className="text-[#64ffda]">engineering</span>.
           </motion.p>
