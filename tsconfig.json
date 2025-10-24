@@ -37,7 +37,7 @@
     "**/*.mts",
     ".next\\dev/types/**/*.ts",
     ".next\\dev/types/**/*.ts"
-  ],
+, "src/components/embla/EmblaCarousel.tsx", "src/components/embla/EmblaCarouselArrowButtons.jsx", "src/components/embla/EmblaCarouselDotButton.jsx"  ],
   "exclude": [
     "node_modules"
   ]

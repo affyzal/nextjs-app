@@ -5,6 +5,7 @@ import { motion, Variants } from "framer-motion"
 import About from "@/components/About"
 import Experience from "@/components/Experience"
 import Contact from "@/components/Contact"
+import Work from "@/components/Work"
 
 export default function Home() {
   const { ref: homeRef, inView: homeInView } = useInView({
@@ -85,43 +86,10 @@ export default function Home() {
       />
 
       {/* Work Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeIn}
-        transition={{ duration: 0.6 }}
-        id="work" 
-        className="min-h-screen flex items-center"
-      >
-        <div className="w-full max-w-3xl mx-auto px-16">
-          <h2 className="flex items-center gap-2 text-2xl font-semibold text-black dark:text-zinc-50 mb-8">
-            <span className="text-[#64ffda]">03.</span> Some Things I&apos;ve Built
-          </h2>
-          <div className="text-zinc-600 dark:text-zinc-400">
-            <motion.p
-              className="text-lg font-mono text-[#64ffda] animate-cursor-blink"
-              initial={{ width: 0 }}
-              animate={{ 
-                width: ["0ch", "22ch", "22ch", "22ch", "0ch", "0ch"],
-              }} // pause at full width
-              transition={{
-                duration: 8, // longer total cycle
-                times: [0, 0.4, 0.6, 1], // hold full width between 40%–60%
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
-              style={{
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                borderRight: "2px solid #64ffda",
-              }}
-            >
-              Projects coming soon...
-            </motion.p>
-          </div>
-
-        </div>
-      </motion.section>
+      <Work
+        aboutRef={aboutRef}
+        aboutInView={aboutInView}
+      />
 
       {/* Contact Section */}
       <Contact
