@@ -120,7 +120,7 @@ export default function Experience({
           variants={item}
           className="flex items-center gap-2 text-2xl font-semibold text-black dark:text-zinc-50 mb-8 pt-20"
         >
-          <span className="text-[#64ffda]">01.</span> My Professional Experience
+          <span className="text-[#64ffda]">02.</span> My Professional Experience
         </motion.h2>
 
         {/* Tabs */}
