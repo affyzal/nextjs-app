@@ -7,7 +7,7 @@ export const runtime = "nodejs"
 export async function GET() {
   try {
     // Find the file inside your public folder
-    const filePath = path.join(process.cwd(), "public", "Afzal_Miah_CV_V5.docx")
+    const filePath = path.join(process.cwd(), "public", "Afzal_Miah_CV_V5_No_Phone.docx")
     const fileBuffer = await fs.readFile(filePath)
 
     // Return it as a downloadable file
@@ -15,7 +15,7 @@ export async function GET() {
       headers: {
         "Content-Type":
           "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "Content-Disposition": 'attachment; filename="Afzal_Miah_CV_V5.docx"',
+        "Content-Disposition": 'attachment; filename="Afzal_Miah_CV.docx"',
         "Cache-Control": "public, max-age=31536000, immutable",
       },
     })
