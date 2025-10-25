@@ -33,15 +33,24 @@ export default function Work({
     const OPTIONS = { loop: true }
     const SLIDES = [
     {
-      title: "Portfolio Website",
-      desc: "Built with Next.js, Tailwind, and Framer Motion.",
-      img: "/max.jpg",
-      link: "https://example.com",
+      title: "Sentiment Analysis",
+      desc: "An interactive web app that analyzes the emotional tone of presidential debates using natural language processing. Each candidate’s statements are scored for positive, neutral, or negative sentiment, and visualized over time to reveal shifts in tone, intensity, and audience reaction.",
+      img: "/hon-map.png",
+      link: "https://example.com"
     },
     {
-      title: "Analytics Dashboard",
-      desc: "Interactive data visualization with API integration.",
-      img: "/max.jpg",
+      title: "2D Platformer Game",
+      desc: "Players navigate through challenging levels, avoiding obstacles and enemies built using GoDot. It's a fun small game which features pixel art graphics, catchy  music, and responsive controls for an engaging gaming experience.",
+      img: "",
+      link: "",
+      video: "https://www.youtube.com/embed/_fX05zkj7ps",
+    },
+    {
+      title: "",
+      desc: "More to come soon!",
+      img: "",
+      link: "",
+      video: "",
     },
   ];
 

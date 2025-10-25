@@ -31,8 +31,17 @@ const EmblaCarousel = ({ slides, options }) => {
                   <h3 className="text-2xl font-semibold text-[#64ffda]">
                     {slide?.title ?? 'Untitled'}
                   </h3>
-                  <p className="text-zinc-800 dark:text-zinc-300">
-                    {slide?.desc ?? 'No description provided.'}
+                  <p className="text-zinc-800 dark:text-zinc-300 white-space-pre-line">
+                    {(slide?.desc ?? '')
+                      .split('.')
+                      .filter(Boolean)
+                      .map((sentence, i) => (
+                        <React.Fragment key={i}>
+                          {sentence.trim()}.
+                          <br />
+                          <br />
+                        </React.Fragment>
+                      ))}
                   </p>
                   {slide?.link && (
                     <a
@@ -54,20 +63,27 @@ const EmblaCarousel = ({ slides, options }) => {
                       className="w-full h-64 md:h-80 rounded-lg shadow-lg object-cover"
                       loading="lazy"
                     />
+                  ) : slide?.video ? (
+                    <iframe
+                      className="w-full h-64 md:h-80 rounded-lg shadow-lg"
+                      src={slide.video}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+
                   ) : (
                     <div className="w-full h-64 md:h-80 rounded-lg bg-zinc-100 dark:bg-zinc-800 grid place-items-center">
                       <span className="text-zinc-500 dark:text-zinc-400 font-mono">
-                        Image coming soon
+                        Media coming soon
                       </span>
                     </div>
                   )}
+
                 </div>
               </div>
             </div>
           ))}
-
-
-
         </div>
       </div>
 
