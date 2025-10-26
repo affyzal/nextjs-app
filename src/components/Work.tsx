@@ -23,13 +23,7 @@ const item: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 }
 
-export default function Work({
-  aboutRef,
-  aboutInView,
-}: {
-  aboutRef: (node?: HTMLElement | null) => void
-  aboutInView: boolean
-}) {
+export default function Work() {
     const OPTIONS = { loop: true }
     const SLIDES = [
     {
@@ -57,7 +51,7 @@ export default function Work({
   return (
     <motion.section
       id="work"
-      className="min-h-screen flex items-center"
+      className="min-h-screen flex items-center scroll-mt-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}  // animate on first 25% in-view

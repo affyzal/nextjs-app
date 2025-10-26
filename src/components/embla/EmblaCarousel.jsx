@@ -2,6 +2,7 @@ import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import { PrevButton, NextButton, usePrevNextButtons } from "./EmblaCarouselArrowButtons";
+import { motion } from "framer-motion";
 
 const EmblaCarousel = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -44,34 +45,40 @@ const EmblaCarousel = ({ slides, options }) => {
                       ))}
                   </p>
                   {slide?.link && (
-                    <a
+                    <motion.a
                       href={slide.link}
-                      className="inline-block mt-2 text-[#64ffda] hover:underline font-mono"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 16 }}
+                      className="inline-block mt-2 text-[#64ffda] hover:underline font-mono hover:border hover:border-[#64ffda] rounded px px-3 py-1"
                       target="_blank" rel="noopener noreferrer"
                     >
                       View Project →
-                    </a>
+                    </motion.a>
                   )}
                 </div>
 
                 {/* Right: image (2/3) */}
                 <div className="md:col-span-2">
                   {slide?.img ? (
-                    <img
-                      src={slide.img}
-                      alt={slide?.title ?? 'Project image'}
-                      className="w-full h-64 md:h-80 rounded-lg shadow-lg object-cover"
-                      loading="lazy"
-                    />
+                    <motion.div className="rounded border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-300">
+                      <img
+                        src={slide.img}
+                        alt={slide?.title ?? 'Project image'}
+                        className="w-full h-64 md:h-80 rounded-lg shadow-lg object-cover"
+                        loading="lazy"
+                      />
+                    </motion.div>
                   ) : slide?.video ? (
-                    <iframe
-                      className="w-full h-64 md:h-80 rounded-lg shadow-lg"
-                      src={slide.video}
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-
+                    <motion.div className="rounded border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-300">
+                      <iframe
+                        className="w-full h-64 md:h-80 rounded-lg shadow-lg"
+                        src={slide.video}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </motion.div>
                   ) : (
                     <div className="w-full h-64 md:h-80 rounded-lg bg-zinc-100 dark:bg-zinc-800 grid place-items-center">
                       <span className="text-zinc-500 dark:text-zinc-400 font-mono">
