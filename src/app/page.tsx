@@ -86,10 +86,7 @@ export default function Home() {
       />
 
       {/* Work Section */}
-      <Work
-        aboutRef={aboutRef}
-        aboutInView={aboutInView}
-      />
+      <Work />
 
       {/* Contact Section */}
       <Contact

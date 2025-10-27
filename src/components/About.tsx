@@ -83,7 +83,7 @@ export default function About({
             <span className="text-[#64ffda]"> little UI details that make you smile</span>.
           </motion.p>
           <motion.p variants={item}>
-            Here are a few technologies I’ve been working with recently — and I’m always exploring 
+            Here are a few technologies I’ve been working with recently - and I’m always exploring 
             <span className="text-[#64ffda]"> new tools</span> that make building 
             <span className="text-[#64ffda]"> delightful software</span> faster and cleaner:
           </motion.p>
