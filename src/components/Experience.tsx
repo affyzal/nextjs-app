@@ -95,13 +95,7 @@ const fulljobs: Job[] = [
   },
 ]
 
-export default function Experience({
-  aboutRef,
-  aboutInView,
-}: {
-  aboutRef: (node?: HTMLElement | null) => void
-  aboutInView: boolean
-}) {
+export default function Experience() {
 
   const listRef = useRef<HTMLDivElement>(null); // 👈 create a reference to the tab list container
 

@@ -6,6 +6,7 @@ import About from "@/components/About"
 import Experience from "@/components/Experience"
 import Contact from "@/components/Contact"
 import Work from "@/components/Work"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   const { ref: homeRef, inView: homeInView } = useInView({
@@ -17,6 +18,12 @@ export default function Home() {
     threshold: 0.3,
     triggerOnce: true
   });
+
+  const { ref: contactRef, inView: contactInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  });
+
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -80,52 +87,19 @@ export default function Home() {
       />
 
       {/* Experience Section */}
-      <Experience
-        aboutRef={aboutRef}
-        aboutInView={aboutInView}
-      />
+      <Experience />
 
       {/* Work Section */}
       <Work />
 
       {/* Contact Section */}
       <Contact
-        aboutRef={aboutRef}
-        aboutInView={aboutInView}
+        contactRef={contactRef}
+        contactInView={contactInView}
       />
 
       {/* Footer */}
-      <footer className="mt-20 border-t border-slate-800 bg-slate-900/80 backdrop-blur text-zinc-400 text-sm">
-        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>&copy; {new Date().getFullYear()} Afzal Miah. Crafted with ❤️ and <span className="text-[#64ffda]">Next.js</span>.</p>
-          <div className="flex gap-4">
-            <a
-              href="https://github.com/affyzal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#64ffda] transition-colors"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/afzalmiah/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#64ffda] transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:affyzal@gmail.com"
-              className="hover:text-[#64ffda] transition-colors"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </footer>
-
-
+      <Footer />
 
     </main>
   )

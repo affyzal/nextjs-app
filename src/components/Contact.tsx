@@ -23,11 +23,11 @@ const item: Variants = {
 }
 
 export default function Contact({
-  aboutRef,
-  aboutInView,
+  contactRef,
+  contactInView,
 }: {
-  aboutRef: (node?: HTMLElement | null) => void
-  aboutInView: boolean
+  contactRef: (node?: HTMLElement | null) => void
+  contactInView: boolean
 }) {
   const skills = [
     "JavaScript (ES6+)",
@@ -40,9 +40,9 @@ export default function Contact({
 
   return (
       <motion.section
-        ref={aboutRef}
+        ref={contactRef}
         initial="hidden"
-        animate={aboutInView ? "visible" : "hidden"}
+        animate={contactInView ? "visible" : "hidden"}
         transition={{ duration: 0.6 }}
         id="contact" 
         className="min-h-screen flex items-center"
