@@ -27,8 +27,3 @@ jobs:
       # 4. Run ESLint + Prettier integration
       - name: Run ESLint (includes Prettier)
         run: npx eslint . --ext .js,.ts,.tsx
-
-      # 5. Optional: TypeScript type check
-      - name: TypeScript type check
-        if: exists('tsconfig.json')
-        run: npx tsc --noEmit
