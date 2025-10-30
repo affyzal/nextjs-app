@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useCallback, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const useDotButton = (emblaApi) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -10,7 +10,7 @@ export const useDotButton = (emblaApi) => {
       if (!emblaApi) return;
       emblaApi.scrollTo(index);
     },
-    [emblaApi]
+    [emblaApi],
   );
 
   const onInit = useCallback((api) => {
@@ -25,15 +25,15 @@ export const useDotButton = (emblaApi) => {
     if (!emblaApi) return;
     onInit(emblaApi);
     onSelect(emblaApi);
-    emblaApi.on("reInit", onInit);
-    emblaApi.on("reInit", onSelect);
-    emblaApi.on("select", onSelect);
+    emblaApi.on('reInit', onInit);
+    emblaApi.on('reInit', onSelect);
+    emblaApi.on('select', onSelect);
   }, [emblaApi, onInit, onSelect]);
 
   return { selectedIndex, scrollSnaps, onDotButtonClick };
 };
 
-export const DotButton = ({ className = "", ...rest }) => {
+export const DotButton = ({ className = '', ...rest }) => {
   return (
     <motion.button
       type="button"
