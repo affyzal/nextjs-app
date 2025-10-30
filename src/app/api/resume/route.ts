@@ -24,6 +24,7 @@ export async function GET() {
       },
     });
   } catch (error) {
+    // handle error, e.g., file not found
     console.error('Error reading file:', error);
     return new Response('File not found', { status: 404 });
   }
