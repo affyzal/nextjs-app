@@ -7,6 +7,7 @@ import {
   usePrevNextButtons,
 } from './EmblaCarouselArrowButtons';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const EmblaCarousel = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -76,12 +77,13 @@ const EmblaCarousel = ({ slides, options }) => {
                 <div className="md:col-span-2">
                   {slide?.img ? (
                     <motion.div className="rounded border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-300">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src={slide.img}
                         alt={slide?.title ?? 'Project image'}
-                        className="w-full h-64 md:h-80 rounded-lg shadow-lg object-cover"
-                        loading="lazy"
+                        width={800} // set expected dimensions
+                        height={480}
+                        className="rounded-lg shadow-lg object-cover"
+                        priority={i === 0} // first slide loads immediately
                       />
                     </motion.div>
                   ) : slide?.video ? (
