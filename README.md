@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Afzal Miah – Personal Website
 
-## Getting Started
+This is the source code for my personal website, built with **Next.js**, **Tailwind CSS**, and **Framer Motion**. It highlights my experience, contact information and some projects.
 
-First, run the development server:
+![Screenshot](./home.png)
+
+---
+
+## 🚀 Features
+
+- **Next.js**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Responsive Design**.
+- **Embla Carousel**
+
+---
+
+## 📦 Tech Stack
+
+- **Frontend:** React, Next.js, Tailwind CSS, Framer Motion
+- **Carousel:** Embla Carousel
+- **Deployment:** Vercel (auto-deploy previews for PRs)
+- **Backend:** Next.js API route for handling requests
+
+---
+
+## ⚡ Getting Started
+
+### Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/affyzal/nextjs-app.git
+cd nextjs-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# or
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+yarn install
 
-## Learn More
+Run development server
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+# or
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+yarn dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open http://localhost:3000
+ with your browser.
 
-## Deploy on Vercel
+Build for production
+npm run build
+npm start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# or
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+yarn build
+yarn start
+
+The production site runs at [http://localhost:3000]()
+.
+
+# 🧹 Code Quality
+
+ESLint + Prettier integrated for consistent formatting.
+
+GitHub Actions workflow runs linting on pull requests.
+
+# 📂 Project Structure
+
+```
+├─ src/
+│ ├─ app/
+│ │ ├─ page.tsx # Main landing page
+│ │ ├─ sections/ # Scrollable sections for the main page
+│ │ │ ├─ About.tsx
+│ │ │ ├─ Experience.tsx
+│ │ │ ├─ Work.tsx
+│ │ │ └─ Contact.tsx
+│ ├─ components/ # Reusable components (carousel, buttons, header, etc.)
+│ └─ styles/ # Tailwind configuration and global styles
+├─ public/ # Static assets (images, icons)
+├─ package.json
+└─ next.config.js
+```
+
+# 📬 Contact
+
+Email: affyzal@gmail.com
+
+GitHub: https://github.com/affyzal
+
+LinkedIn: https://www.linkedin.com/in/afzalmiah/
+
+# 🔗 Deployment
+
+This site is deployed on Vercel. Preview builds are automatically generated for pull requests, and production deploys trigger on merges to the main branch.
+
+Production: https://www.afzalmiah.dev
+
+Preview: Auto-generated per PR for testing
+
+# ❤️ Acknowledgements
+
+Next.js
+
+Tailwind CSS
+
+Framer Motion
+
+Embla Carousel
