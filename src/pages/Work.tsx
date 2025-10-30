@@ -3,7 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { RefObject } from "react";
 import Image from "next/image";
-import EmblaCarousel from "./embla/EmblaCarousel";
+import EmblaCarousel from "../components/embla/EmblaCarousel";
 
 const container: Variants = {
   hidden: { opacity: 0 },

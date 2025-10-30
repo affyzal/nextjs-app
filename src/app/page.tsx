@@ -2,10 +2,10 @@
 import Header from "@/components/Header"
 import { useInView } from "react-intersection-observer"
 import { motion, Variants } from "framer-motion"
-import About from "@/components/About"
-import Experience from "@/components/Experience"
-import Contact from "@/components/Contact"
-import Work from "@/components/Work"
+import About from "@/pages/About"
+import Experience from "@/pages/Experience"
+import Contact from "@/pages/Contact"
+import Work from "@/pages/Work"
 import Footer from "@/components/Footer"
 
 export default function Home() {
