@@ -3,7 +3,7 @@ name: Lint, Format & Type Check
 on:
   pull_request:
     branches:
-      - master  # triggers on PRs that target the main branch
+      - master # triggers on PRs that target the main branch
 
 jobs:
   lint:

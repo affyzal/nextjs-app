@@ -1,8 +1,6 @@
 // components/About.tsx
 'use client';
 import { motion, type Variants } from 'framer-motion';
-import { RefObject } from 'react';
-import Image from 'next/image';
 import EmblaCarousel from '../components/embla/EmblaCarousel';
 
 const container: Variants = {

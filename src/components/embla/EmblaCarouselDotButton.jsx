@@ -23,11 +23,25 @@ export const useDotButton = (emblaApi) => {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onInit(emblaApi);
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onInit);
-    emblaApi.on('reInit', onSelect);
-    emblaApi.on('select', onSelect);
+
+    const handleInit = () => onInit(emblaApi); // safely call setState
+    const handleSelect = () => onSelect(emblaApi);
+
+    // initial run
+    handleInit();
+    handleSelect();
+
+    // subscribe to events
+    emblaApi.on('reInit', handleInit);
+    emblaApi.on('reInit', handleSelect);
+    emblaApi.on('select', handleSelect);
+
+    // cleanup
+    return () => {
+      emblaApi.off('reInit', handleInit);
+      emblaApi.off('reInit', handleSelect);
+      emblaApi.off('select', handleSelect);
+    };
   }, [emblaApi, onInit, onSelect]);
 
   return { selectedIndex, scrollSnaps, onDotButtonClick };

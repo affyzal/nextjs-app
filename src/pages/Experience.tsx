@@ -1,7 +1,6 @@
 // components/About.tsx
 'use client';
 import { motion, type Variants } from 'framer-motion';
-import { RefObject } from 'react';
 import { Tab } from '@headlessui/react';
 import { useRef } from 'react';
 
@@ -74,6 +73,7 @@ const jobs: Job[] = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const fulljobs: Job[] = [
   {
     title: 'Software Engineer',
@@ -135,6 +135,7 @@ export default function Experience() {
           >
             {jobs.map((job, index) => (
               <Tab
+                id={index.toString()}
                 key={job.title}
                 as={motion.button}
                 whileHover={{ scale: 1.02 }}
