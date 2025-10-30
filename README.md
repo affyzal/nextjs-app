@@ -27,41 +27,46 @@ This is the source code for my personal website, built with **Next.js**, **Tailw
 
 ## ⚡ Getting Started
 
-### Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/affyzal/nextjs-app.git
 cd nextjs-app
 ```
 
-Install dependencies
+### 2. Install dependencies
+
+```
 npm install
-
 # or
-
 yarn install
+```
 
-Run development server
+### 3. Run development server
+
+```
 npm run dev
-
 # or
-
 yarn dev
+```
 
-Open http://localhost:3000
- with your browser.
+Open [http://localhost:3000]() in your browser.
 
-Build for production
+### 4. Build for production
+
+```
 npm run build
 npm start
+```
 
-# or
+or 
 
+```
 yarn build
 yarn start
+```
 
-The production site runs at [http://localhost:3000]()
-.
+The production site will run at [http://localhost:3000]()..
 
 # 🧹 Code Quality
 
