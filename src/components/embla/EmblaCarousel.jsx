@@ -76,6 +76,7 @@ const EmblaCarousel = ({ slides, options }) => {
                 <div className="md:col-span-2">
                   {slide?.img ? (
                     <motion.div className="rounded border border-[#64ffda]/20 hover:border-[#64ffda] transition-all duration-300">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={slide.img}
                         alt={slide?.title ?? 'Project image'}

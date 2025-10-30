@@ -12,9 +12,17 @@ export const usePrevNextButtons = (emblaApi) => {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect(emblaApi);
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
+
+    const handleSelect = () => onSelect(emblaApi); // safe wrapper
+    handleSelect(); // optional initial call
+
+    emblaApi.on('select', handleSelect);
+    emblaApi.on('reInit', handleSelect);
+
+    return () => {
+      emblaApi.off('select', handleSelect);
+      emblaApi.off('reInit', handleSelect);
+    };
   }, [emblaApi, onSelect]);
 
   const scrollPrev = useCallback(

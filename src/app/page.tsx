@@ -14,20 +14,10 @@ export default function Home() {
     triggerOnce: true,
   });
 
-  const { ref: aboutRef, inView: aboutInView } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
-
   const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
   });
-
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   const container: Variants = {
     hidden: { opacity: 0, y: 24 },
@@ -103,7 +93,7 @@ export default function Home() {
       </motion.section>
 
       {/* About Section */}
-      <About aboutRef={aboutRef} aboutInView={aboutInView} />
+      <About />
 
       {/* Experience Section */}
       <Experience />

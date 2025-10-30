@@ -1,7 +1,6 @@
 // components/About.tsx
 'use client';
 import { motion, type Variants } from 'framer-motion';
-import { RefObject } from 'react';
 import Image from 'next/image';
 
 const container: Variants = {
@@ -22,13 +21,7 @@ const item: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
-export default function About({
-  aboutRef,
-  aboutInView,
-}: {
-  aboutRef: (node?: HTMLElement | null) => void;
-  aboutInView: boolean;
-}) {
+export default function About() {
   const skills = [
     'JavaScript (ES6+)',
     'TypeScript',

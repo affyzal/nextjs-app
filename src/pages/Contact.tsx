@@ -28,15 +28,6 @@ export default function Contact({
   contactRef: (node?: HTMLElement | null) => void;
   contactInView: boolean;
 }) {
-  const skills = [
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'React',
-    'Ruby on Rails',
-    'Next.js',
-    'React Native',
-  ];
-
   return (
     <motion.section
       ref={contactRef}
