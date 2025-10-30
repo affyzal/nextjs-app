@@ -7,6 +7,7 @@ import {
   usePrevNextButtons,
 } from './EmblaCarouselArrowButtons';
 import { motion } from 'framer-motion';
+// EmblaCarousel component
 
 const EmblaCarousel = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
