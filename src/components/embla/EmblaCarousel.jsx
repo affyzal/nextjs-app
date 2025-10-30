@@ -1,14 +1,23 @@
-import React from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import { PrevButton, NextButton, usePrevNextButtons } from "./EmblaCarouselArrowButtons";
-import { motion } from "framer-motion";
+import React from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { DotButton, useDotButton } from './EmblaCarouselDotButton';
+import {
+  PrevButton,
+  NextButton,
+  usePrevNextButtons,
+} from './EmblaCarouselArrowButtons';
+import { motion } from 'framer-motion';
 
 const EmblaCarousel = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
-  const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
-    usePrevNextButtons(emblaApi);
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi);
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
 
   return (
     <section className="embla">
@@ -25,7 +34,7 @@ const EmblaCarousel = ({ slides, options }) => {
                   hover:shadow-[inset_0_0_35px_6px_rgba(100,255,218,0.5)]
                   transition-all duration-300
                 "
-                style={{ minHeight: '20rem' }}   // force height regardless of CSS conflicts
+                style={{ minHeight: '20rem' }} // force height regardless of CSS conflicts
               >
                 {/* Left: text (1/3) */}
                 <div className="md:col-span-1 text-left space-y-3">
@@ -49,9 +58,14 @@ const EmblaCarousel = ({ slides, options }) => {
                       href={slide.link}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 260, damping: 16 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 260,
+                        damping: 16,
+                      }}
                       className="inline-block mt-2 text-[#64ffda] hover:underline font-mono hover:border hover:border-[#64ffda] rounded px px-3 py-1"
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       View Project →
                     </motion.a>
@@ -86,7 +100,6 @@ const EmblaCarousel = ({ slides, options }) => {
                       </span>
                     </div>
                   )}
-
                 </div>
               </div>
             </div>
@@ -107,8 +120,8 @@ const EmblaCarousel = ({ slides, options }) => {
               onClick={() => onDotButtonClick(index)}
               className={
                 index === selectedIndex
-                  ? "bg-[#64ffda]"
-                  : "bg-zinc-400/50 hover:bg-zinc-400"
+                  ? 'bg-[#64ffda]'
+                  : 'bg-zinc-400/50 hover:bg-zinc-400'
               }
             />
           ))}
