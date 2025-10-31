@@ -59,7 +59,7 @@ npm run build
 npm start
 ```
 
-or 
+or
 
 ```
 yarn build
