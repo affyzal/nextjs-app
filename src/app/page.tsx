@@ -49,7 +49,7 @@ export default function Home() {
         animate={homeInView ? 'visible' : 'hidden'}
         transition={{ duration: 0.6 }}
         id="home"
-        className="min-h-screen flex items-center"
+        className="min-h-screen flex flex-col justify-center pt-16 sm:pt-20 md:pt-0 md:items-center"
         variants={container}
       >
         <div className="w-full max-w-3xl mx-auto px-16">

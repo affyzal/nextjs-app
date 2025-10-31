@@ -80,13 +80,13 @@ export default function Experience() {
   return (
     <motion.section
       id="experience"
-      className="min-h-screen flex items-center sm:flex-col sm:items-stretch sm:py-16"
+      className="flex flex-col items-start min-h-[auto] pb-16 md:min-h-screen md:items-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
       variants={headerBlock}
     >
-      <div className="w-full max-w-5xl mx-auto px-16 sm:px-6">
+      <div className="w-full max-w-5xl mx-auto px-6 sm:px-6">
         <motion.h2
           variants={item}
           className="flex items-center gap-2 text-2xl font-semibold text-black dark:text-zinc-50 mb-8 pt-20"
@@ -100,15 +100,16 @@ export default function Experience() {
             ref={listRef}
             className="flex gap-2 border-b border-zinc-700 mb-6 overflow-x-auto overflow-y-hidden md:overflow-x-visible relative"
           >
-            {jobs.map((job) => (
+            {jobs.map((job, index) => (
               <Tab
+                id={index.toString()}
                 key={job.title}
                 as={motion.button}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 16 }}
                 className={({ selected }) =>
-                  `relative px-4 py-2 text-sm font-medium rounded-t-md whitespace-nowrap transition-colors ${
+                  `relative px-4 py-2 text-sm font-medium rounded-t-md transition-colors ${
                     selected
                       ? 'text-[#64ffda]'
                       : 'text-zinc-500 hover:text-[#64ffda]'
@@ -136,7 +137,7 @@ export default function Experience() {
           </Tab.List>
 
           {/* Tab panels */}
-          <Tab.Panels className="relative min-h-[28rem] sm:min-h-0 sm:space-y-6">
+          <Tab.Panels className="relative sm:space-y-6 md:min-h-[28rem]">
             {jobs.map((job) => (
               <Tab.Panel
                 key={job.title}
