@@ -63,8 +63,8 @@ const config: runtime.GetPrismaClientConfig = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider      = \"prisma-client\"\n  output        = \"../src/generated/prisma\" // keep your custom output path\n  binaryTargets = [\"native\", \"debian-openssl-1.1.x\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel ResumeDownload {\n  id        Int      @id @default(autoincrement()) // unique ID per row\n  count     Int      @default(1) // default count is now 1\n  createdAt DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "46807666a758d2777a93b2d6ad6f03f4ec049a137c4695c762eaca8e9708c757",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client\"\n  output        = \"../src/generated/prisma\"\n  binaryTargets = [\"native\", \"debian-openssl-1.1.x\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel ResumeDownload {\n  id        Int      @id @default(autoincrement()) // unique ID per row\n  count     Int      @default(1) // default count is now 1\n  createdAt DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "b7100c11ae785d2d2ff19295a4ccb24e8a350c49d041272012012bd46f3593af",
   "copyEngine": true,
   "runtimeDataModel": {
     "models": {},
