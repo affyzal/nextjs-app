@@ -1,12 +1,23 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { NextResponse } from "next/server";
+import { Redis } from '@upstash/redis'
+
 
 // Force Node runtime (needed for fs)
 export const runtime = 'nodejs';
 
+const redis = Redis.fromEnv();
+
 export async function GET() {
   try {
+    const timestamp = new Date().toISOString();
+    // Increment download counter
+    await redis.multi()
+      .incr('resume-downloads')          // increment counter
+      .lpush('resume-downloads-log', timestamp) // add timestamp to list
+      .exec();
+
     // Find the file inside your public folder
     const filePath = path.join(
       process.cwd(),
