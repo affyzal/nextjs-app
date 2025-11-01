@@ -37,6 +37,10 @@ const config: runtime.GetPrismaClientConfig = {
       {
         "fromEnvVar": null,
         "value": "debian-openssl-1.1.x"
+      },
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -59,8 +63,8 @@ const config: runtime.GetPrismaClientConfig = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider      = \"prisma-client\"\n  output        = \"../src/generated/prisma\" // keep your custom output path\n  binaryTargets = [\"native\", \"debian-openssl-1.1.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel ResumeDownload {\n  id        Int      @id @default(autoincrement()) // unique ID per row\n  count     Int      @default(1) // default count is now 1\n  createdAt DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "9e51b89d4a898b890c5517df789cdd55288a9c688b772d0d948b08c5cc71c652",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client\"\n  output        = \"../src/generated/prisma\" // keep your custom output path\n  binaryTargets = [\"native\", \"debian-openssl-1.1.x\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel ResumeDownload {\n  id        Int      @id @default(autoincrement()) // unique ID per row\n  count     Int      @default(1) // default count is now 1\n  createdAt DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "46807666a758d2777a93b2d6ad6f03f4ec049a137c4695c762eaca8e9708c757",
   "copyEngine": true,
   "runtimeDataModel": {
     "models": {},
