@@ -1,16 +1,12 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { NextResponse } from "next/server";
-import { PrismaClient } from '@/generated/prisma/client';
 
 // Force Node runtime (needed for fs)
 export const runtime = 'nodejs';
 
-const prisma = new PrismaClient();
-
 export async function GET() {
   try {
-    await prisma.resumeDownload.create({ data: {} });
     // Find the file inside your public folder
     const filePath = path.join(
       process.cwd(),
