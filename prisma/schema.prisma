@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma" // keep your custom output path
+}
+
+datasource db {
+  provider = "postgresql"
+  url      =  env("DATABASE_URL")
+}
+
+model ResumeDownload {
+  id    Int @id @default(autoincrement()) // unique ID per row
+  count Int @default(1)                   // default count is now 1
+  createdAt DateTime @default(now())
+}
+
