@@ -28,7 +28,7 @@ export default function Work() {
       title: 'Sentiment Analysis',
       desc: 'An interactive web app that analyzes the emotional tone of presidential debates using natural language processing. Each candidate’s statements are scored for positive, neutral, or negative sentiment, and visualized over time to reveal shifts in tone, intensity, and audience reaction.',
       img: '/hon-map.png',
-      link: 'https://example.com',
+      link: '',
     },
     {
       title: '2D Platformer Game',
