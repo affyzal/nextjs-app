@@ -42,7 +42,7 @@ const EmblaCarousel = ({ slides, options }) => {
                   <h3 className="text-2xl font-semibold text-[#64ffda]">
                     {slide?.title ?? 'Untitled'}
                   </h3>
-                  <p className="text-zinc-800 dark:text-zinc-300 white-space-pre-line">
+                  <p className="text-zinc-300 white-space-pre-line">
                     {(slide?.desc ?? '')
                       .split('.')
                       .filter(Boolean)
@@ -97,8 +97,8 @@ const EmblaCarousel = ({ slides, options }) => {
                       ></iframe>
                     </motion.div>
                   ) : (
-                    <div className="w-full h-64 md:h-80 rounded-lg bg-zinc-100 dark:bg-zinc-800 grid place-items-center">
-                      <span className="text-zinc-500 dark:text-zinc-400 font-mono">
+                    <div className="w-full h-64 md:h-80 rounded-lg bg-zinc-800 grid place-items-center">
+                      <span className="text-zinc-400 font-mono">
                         Media coming soon
                       </span>
                     </div>

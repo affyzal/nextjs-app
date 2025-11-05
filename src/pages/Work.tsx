@@ -58,7 +58,7 @@ export default function Work() {
       <div className="w-full max-w-5xl mx-auto px-16">
         <motion.h2
           variants={item}
-          className="flex items-center gap-2 text-2xl font-semibold text-black dark:text-zinc-50 mb-8"
+          className="flex items-center gap-2 text-2xl font-semibold text-zinc-50 mb-8"
         >
           <span className="text-[#64ffda]">03.</span> Some Things I&apos;ve
           Built

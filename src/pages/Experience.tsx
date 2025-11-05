@@ -89,7 +89,7 @@ export default function Experience() {
       <div className="w-full max-w-5xl mx-auto px-6 sm:px-6">
         <motion.h2
           variants={item}
-          className="flex items-center gap-2 text-2xl font-semibold text-black dark:text-zinc-50 mb-8 pt-20"
+          className="flex items-center gap-2 text-2xl font-semibold text-zinc-50 mb-8 pt-20"
         >
           <span className="text-[#64ffda]">02.</span> My Professional Experience
         </motion.h2>
@@ -161,7 +161,7 @@ export default function Experience() {
                   {/* Bullet list */}
                   <motion.ul
                     variants={detailsContainer}
-                    className="list-none pl-5 space-y-2 text-zinc-600 dark:text-zinc-400"
+                    className="list-none pl-5 space-y-2 text-zinc-400"
                   >
                     {job.bullets.map((b) => (
                       <motion.li key={b} variants={detailItem}>

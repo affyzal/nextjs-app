@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-[#0a192f]">
+    <main className="min-h-screen bg-[#0a192f]">
       <Header />
 
       {/* Hero Section */}
@@ -62,19 +62,19 @@ export default function Home() {
             </motion.h2>
             <motion.h1
               variants={item}
-              className="max-w-3xl text-6xl font-semibold tracking-tight text-black dark:text-zinc-50"
+              className="max-w-3xl text-6xl font-semibold tracking-tight text-zinc-50"
             >
               Afzal Miah.
             </motion.h1>
             <motion.h1
               variants={item}
-              className="max-w-3xl text-6xl font-semibold tracking-tight text-zinc-600 dark:text-zinc-400"
+              className="max-w-3xl text-6xl font-semibold tracking-tight text-zinc-400"
             >
               I like to build things.
             </motion.h1>
             <motion.p
               variants={item}
-              className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400"
+              className="max-w-xl text-lg leading-8 text-zinc-400"
             >
               Software Engineer building meaningful, user-first digital products
               - currently shaping a map-based management platform at{' '}
