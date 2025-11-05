@@ -86,7 +86,7 @@ export default function About() {
               </span>{' '}
               across web and mobile. I care about{' '}
               <span className="text-[#64ffda]">good design</span>,
-              <span className="text-[#64ffda]">maintainable code</span>, and
+              <span className="text-[#64ffda]">{''}maintainable code</span>, and
               those
               <span className="text-[#64ffda]">
                 {' '}
