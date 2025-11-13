@@ -26,7 +26,7 @@ export default function Work() {
   const SLIDES = [
     {
       title: 'Sentiment Analysis',
-      desc: 'An interactive web app that analyzes the emotional tone of presidential debates using natural language processing. Each candidate’s statements are scored for positive, neutral, or negative sentiment, and visualized over time to reveal shifts in tone, intensity, and audience reaction.',
+      desc: 'An interactive web app that analyzes the emotional tone of presidential debates using natural language processing. Each candidate’s statements are scored for positive, neutral, or negative sentiment, and visualized over time to reveal shifts in tone, intensity, and audience reaction. App is under re-development to enhance UX and add new features using Nextjs.',
       img: '/hon-map.png',
       link: 'https://sentiment.afzalmiah.dev',
     },
