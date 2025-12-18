@@ -59,7 +59,7 @@ export default function Contact({
             {/* Email button */}
             <motion.a
               variants={item}
-              href="mailto:affyzal@gmail.com"
+              href="mailto:hello@afzalmiah.dev"
               whileHover={{
                 scale: 1.1,
                 boxShadow: '0 0 20px 4px rgba(100,255,218,0.25)',
