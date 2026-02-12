@@ -7,6 +7,8 @@ import Experience from '@/pages/Experience';
 import Contact from '@/pages/Contact';
 import Work from '@/pages/Work';
 import Footer from '@/components/Footer';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 export default function Home() {
   const { ref: homeRef, inView: homeInView } = useInView({
@@ -37,6 +39,14 @@ export default function Home() {
     hidden: { opacity: 0, y: 12 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
+
+  useEffect(() => {
+    console.log('Testing API endpoint...');
+    axios.get('http://127.0.0.1:8000/tester')
+    .then((response) => { console.log('API Response:', response.data); })
+    .catch((error) => { console.error('API Error:', error); })
+    .finally(() => { console.log('API test completed.'); });
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#0a192f]">
