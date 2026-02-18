@@ -22,7 +22,7 @@ export async function GET() {
     const filePath = path.join(
       process.cwd(),
       'public',
-      'Afzal_Miah_CV_V5_No_Phone.docx',
+      'Afzal_Miah_FullStack_CV_V2.pdf',
     );
     const fileBuffer = await fs.readFile(filePath);
 
@@ -30,8 +30,8 @@ export async function GET() {
     return new Response(fileBuffer, {
       headers: {
         'Content-Type':
-          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'Content-Disposition': 'attachment; filename="Afzal_Miah_CV.docx"',
+          'application/pdf',
+        'Content-Disposition': 'attachment; filename="Afzal_Miah_FullStack_CV_V2.pdf"',
         'Cache-Control': 'public, max-age=31536000, immutable',
       },
     });
