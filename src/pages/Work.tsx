@@ -26,9 +26,16 @@ export default function Work() {
   const SLIDES = [
     {
       title: 'Sentiment Analysis',
-      desc: 'An interactive web app that analyzes the emotional tone of presidential debates using natural language processing. Each candidate’s statements are scored for positive, neutral, or negative sentiment, and visualized over time to reveal shifts in tone, intensity, and audience reaction. App is under re-development to enhance UX and add new features.',
-      img: '/hon-map.png',
+      desc: 'An interactive web app that analyzes the emotional tone of presidential debates using natural language processing. Each candidate’s statements are scored for positive, neutral, or negative sentiment, and visualized over time to reveal shifts in tone, intensity, and audience reaction.',
+      img: '/sent.png',
       link: 'https://sentiment.afzalmiah.dev',
+    },
+    {
+      title: 'Currency Converter',
+      desc: 'A web application that allows users to convert amounts between different currencies using real-time exchange rates. The app features a user-friendly interface where users can select their desired currencies, input the amount to convert, and receive accurate conversion results instantly.',
+      img: '/fx.png',
+      link: 'https://fx.afzalmiah.dev',
+      video: '',
     },
     {
       title: '2D Platformer Game',
@@ -36,13 +43,6 @@ export default function Work() {
       img: '',
       link: '',
       video: 'https://www.youtube.com/embed/_fX05zkj7ps',
-    },
-    {
-      title: '',
-      desc: 'More to come soon!',
-      img: '',
-      link: '',
-      video: '',
     },
   ];
 
