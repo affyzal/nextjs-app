@@ -76,17 +76,16 @@ export default function Home() {
               variants={item}
               className="max-w-xl text-lg leading-8 text-zinc-400"
             >
-              Software Engineer building meaningful, user-first digital products
-              - currently shaping a map-based management platform at{' '}
+              Software Engineer building meaningful, user-first digital products, currently at{" "}
               <a
-                href="https://www.trubshaw.co/team-sherpa"
+                href="https://www.forsyterisk.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#64ffda]"
               >
-                Trubshaw Cumberlege
+                Forsyte
               </a>
-              .
+              , working at the intersection of AI and legaltech to build tools that make legal workflows smarter and more human.
             </motion.p>
           </div>
         </div>

@@ -48,6 +48,14 @@ type Job = {
 const jobs: Job[] = [
   {
     title: 'Software Engineer',
+    company: 'Forsyte',
+    period: 'April 2026 - Present',
+    bullets: [
+      'Building AI-powered legal tools that enhance human workflows, focusing on user-centric design and seamless integration.',
+    ],
+  },
+  {
+    title: 'Software Engineer',
     company: 'Trubshaw Cumberlege',
     period: 'Aug 2022 - Present',
     bullets: [
@@ -103,7 +111,7 @@ export default function Experience() {
             {jobs.map((job, index) => (
               <Tab
                 id={index.toString()}
-                key={job.title}
+                key={index}
                 as={motion.button}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
@@ -138,9 +146,9 @@ export default function Experience() {
 
           {/* Tab panels */}
           <Tab.Panels className="relative sm:space-y-6 md:min-h-[28rem]">
-            {jobs.map((job) => (
+            {jobs.map((job, index) => (
               <Tab.Panel
-                key={job.title}
+                key={index}
                 className="relative md:absolute md:inset-0"
               >
                 <motion.article
