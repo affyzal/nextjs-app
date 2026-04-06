@@ -1,6 +1,8 @@
-// components/About.tsx
 'use client';
+import { getCalApi } from '@calcom/embed-react';
 import { motion, type Variants } from 'framer-motion';
+import { CalendarClock } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const container: Variants = {
@@ -21,6 +23,8 @@ const item: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
+type CalApi = Awaited<ReturnType<typeof getCalApi>>;
+
 export default function Contact({
   contactRef,
   contactInView,
@@ -28,6 +32,43 @@ export default function Contact({
   contactRef: (node?: HTMLElement | null) => void;
   contactInView: boolean;
 }) {
+  /** Event path like `yourname/20min` (from Cal.com → event type → embed). */
+  const calLink = process.env.NEXT_PUBLIC_CALCOM_CAL_LINK?.trim();
+  /** Cloud: omit. Self-hosted: your Cal.com base URL, e.g. `https://cal.example.com`. */
+  const calOrigin = process.env.NEXT_PUBLIC_CALCOM_ORIGIN?.trim();
+  /** Self-hosted only: where `embed.js` is served, e.g. `https://cal.example.com/embed/embed.js`. */
+  const embedJsUrl = process.env.NEXT_PUBLIC_CALCOM_EMBED_JS_URL?.trim();
+
+  const [calReady, setCalReady] = useState(false);
+  const calApiRef = useRef<CalApi | null>(null);
+
+  useEffect(() => {
+    if (!calLink) return;
+
+    let cancelled = false;
+
+    void getCalApi(embedJsUrl ? { embedJsUrl } : undefined).then((api) => {
+      if (cancelled) return;
+      if (calOrigin) {
+        api('init', { origin: calOrigin });
+      }
+      calApiRef.current = api;
+      setCalReady(true);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [calLink, calOrigin, embedJsUrl]);
+
+  const openCalModal = useCallback(() => {
+    if (!calLink || !calApiRef.current) return;
+    calApiRef.current('modal', {
+      calLink,
+      ...(calOrigin ? { calOrigin } : {}),
+    });
+  }, [calLink, calOrigin]);
+
   return (
     <motion.section
       ref={contactRef}
@@ -53,9 +94,11 @@ export default function Contact({
           >
             I’m always interested in new opportunities, collaborations, or just
             chatting about tech and design. Whether you have a question, a
-            project, or just want to say hi - my inbox is open!
+            project, or just want to say hi - my inbox is open. Prefer to talk
+            live? Grab a 20-minute slot and we can walk through your idea
+            quickly.
           </motion.p>
-          <div className="flex items-center gap-6 mt-16">
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:justify-start">
             {/* Email button */}
             <motion.a
               variants={item}
@@ -71,6 +114,29 @@ export default function Contact({
             >
               Say Hello
             </motion.a>
+
+            {calLink ? (
+              <motion.button
+                type="button"
+                variants={item}
+                onClick={openCalModal}
+                disabled={!calReady}
+                whileHover={
+                  calReady
+                    ? {
+                        scale: 1.1,
+                        boxShadow: '0 0 20px 4px rgba(100,255,218,0.25)',
+                      }
+                    : undefined
+                }
+                whileTap={calReady ? { scale: 0.95 } : undefined}
+                transition={{ type: 'spring', stiffness: 260, damping: 16 }}
+                className="inline-flex items-center gap-2 px-5 py-2 rounded bg-[#64ffda] text-[#0a192f] font-medium hover:bg-[#64ffda]/90 transition disabled:opacity-50 disabled:pointer-events-none"
+              >
+                <CalendarClock className="size-5 shrink-0" aria-hidden />
+                {calReady ? 'Book 20 minutes' : 'Loading calendar…'}
+              </motion.button>
+            ) : null}
 
             {/* LinkedIn Button */}
             <motion.a
