@@ -39,7 +39,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0a192f]">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="min-h-screen bg-[#0a192f] outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0a192f]"
+    >
       <Header />
 
       {/* Hero Section */}
@@ -49,7 +53,8 @@ export default function Home() {
         animate={homeInView ? 'visible' : 'hidden'}
         transition={{ duration: 0.6 }}
         id="home"
-        className="min-h-screen flex flex-col justify-center pt-16 sm:pt-20 md:pt-0 md:items-center"
+        aria-label="Introduction"
+        className="min-h-screen flex flex-col justify-center pt-16 sm:pt-20 md:pt-0 md:items-center scroll-mt-20"
         variants={container}
       >
         <div className="w-full max-w-3xl mx-auto px-16">
@@ -81,7 +86,7 @@ export default function Home() {
                 href="https://www.forsyterisk.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#64ffda]"
+                className="text-[#64ffda] rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a192f]"
               >
                 Forsyte
               </a>

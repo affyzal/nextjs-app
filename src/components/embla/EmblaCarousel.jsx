@@ -21,7 +21,12 @@ const EmblaCarousel = ({ slides, options }) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="embla">
+    <section
+      className="embla"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Featured projects"
+    >
       <div className="embla__viewport overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex -ml-4">
           {slides?.map((slide, i) => (
@@ -64,7 +69,7 @@ const EmblaCarousel = ({ slides, options }) => {
                         stiffness: 260,
                         damping: 16,
                       }}
-                      className="inline-block mt-2 text-[#64ffda] hover:underline font-mono hover:border hover:border-[#64ffda] rounded px px-3 py-1"
+                      className="inline-block mt-2 text-[#64ffda] hover:underline font-mono hover:border hover:border-[#64ffda] rounded px-3 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a192f]"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -91,7 +96,7 @@ const EmblaCarousel = ({ slides, options }) => {
                       <iframe
                         className="w-full h-64 md:h-80 rounded-lg shadow-lg"
                         src={slide.video}
-                        title="YouTube video player"
+                        title={`${slide?.title ?? 'Project'} demo video`}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                       ></iframe>
@@ -116,11 +121,17 @@ const EmblaCarousel = ({ slides, options }) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
 
-        <div className="embla__dots flex items-center gap-2">
+        <div
+          className="embla__dots flex items-center gap-2"
+          role="group"
+          aria-label="Project slides"
+        >
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
+              aria-label={`Show project ${index + 1} of ${scrollSnaps.length}: ${slides[index]?.title ?? 'slide'}`}
+              aria-current={index === selectedIndex ? 'true' : undefined}
               className={
                 index === selectedIndex
                   ? 'bg-[#64ffda]'

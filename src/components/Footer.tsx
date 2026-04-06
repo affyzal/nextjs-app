@@ -9,7 +9,7 @@ export default function Footer() {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            className="text-[#64ffda] transition-colors hover:underline font-semibold"
+            className="text-[#64ffda] transition-colors hover:underline font-semibold rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             href="https://github.com/affyzal/nextjs-app"
           >
             GitHub
@@ -21,21 +21,21 @@ export default function Footer() {
             href="https://github.com/affyzal"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#64ffda] transition-colors"
+            className="rounded-sm hover:text-[#64ffda] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/afzalmiah/"
+            href="https://www.linkedin.com/in/afzal-miah/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#64ffda] transition-colors"
+            className="rounded-sm hover:text-[#64ffda] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             LinkedIn
           </a>
           <a
-            href="mailto:affyzal@gmail.com"
-            className="hover:text-[#64ffda] transition-colors"
+            href="mailto:contact@afzalmiah.dev"
+            className="rounded-sm hover:text-[#64ffda] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             Contact
           </a>

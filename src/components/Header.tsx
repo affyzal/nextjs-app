@@ -112,7 +112,7 @@ export default function Header() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-            className="inline-flex items-center justify-center"
+            className="inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
             style={{ lineHeight: 0, transformOrigin: 'center' }}
             aria-label="Scroll to top"
           >
@@ -125,14 +125,17 @@ export default function Header() {
             />
           </motion.a>
           {/* Desktop nav */}
-          <nav className="hidden sm:flex gap-6 text-sm">
+          <nav
+            className="hidden sm:flex gap-6 text-sm"
+            aria-label="Primary navigation"
+          >
             <motion.a
               variants={item}
               href="#about"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               <span className="text-[#64ffda]">01.</span> About
             </motion.a>
@@ -142,7 +145,7 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               <span className="text-[#64ffda]">02.</span> Experience
             </motion.a>
@@ -152,7 +155,7 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               <span className="text-[#64ffda]">03.</span> Work
             </motion.a>
@@ -162,7 +165,7 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               <span className="text-[#64ffda]">04.</span> Contact
             </motion.a>
@@ -173,7 +176,7 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="border border-[#64ffda] rounded px-4 py-2 hover:text-[#64ffda]"
+              className="border border-[#64ffda] rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
               aria-label="Download resume"
             >
               <span className="text-[#64ffda]">05.</span> Resume
@@ -181,8 +184,11 @@ export default function Header() {
           </nav>
           {/* Mobile menu toggle */}
           <button
-            className="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            aria-label="Toggle menu"
+            type="button"
+            className="sm:hidden p-2 rounded-md text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="primary-menu-mobile"
             onClick={toggleMobile}
           >
             {mobileOpen ? (
@@ -194,13 +200,17 @@ export default function Header() {
         </div>
 
         {/* Mobile nav panel */}
-        {mobileOpen && (
-          <nav className="sm:hidden bg-slate-900 border-t border-slate-800">
+        <nav
+          id="primary-menu-mobile"
+          className="sm:hidden bg-slate-900 border-t border-slate-800"
+          aria-label="Primary navigation"
+          hidden={!mobileOpen}
+        >
             <ul className="px-6 py-4 space-y-3">
               <li>
                 <Link
                   href="/#about"
-                  className="block hover:text-indigo-400"
+                  className="block rounded-sm py-1 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                   onClick={() => setMobileOpen(false)}
                 >
                   About
@@ -209,7 +219,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/#experience"
-                  className="block hover:text-indigo-400"
+                  className="block rounded-sm py-1 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                   onClick={() => setMobileOpen(false)}
                 >
                   Experience
@@ -218,7 +228,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/#work"
-                  className="block hover:text-indigo-400"
+                  className="block rounded-sm py-1 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                   onClick={() => setMobileOpen(false)}
                 >
                   Work
@@ -227,7 +237,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/#contact"
-                  className="block hover:text-indigo-400"
+                  className="block rounded-sm py-1 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                   onClick={() => setMobileOpen(false)}
                 >
                   Contact
@@ -236,7 +246,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/api/resume"
-                  className="block hover:text-indigo-400"
+                  className="block rounded-sm py-1 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                   onClick={() => setMobileOpen(false)}
                 >
                   Resume
@@ -244,7 +254,6 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-        )}
       </motion.header>
     </div>
   );

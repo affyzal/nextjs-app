@@ -51,7 +51,7 @@ export const DotButton = ({ className = '', ...rest }) => {
   return (
     <motion.button
       type="button"
-      className={`h-2.5 w-2.5 rounded-full transition ${className}`}
+      className={`h-2.5 w-2.5 rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a192f] ${className}`}
       {...rest}
     />
   );

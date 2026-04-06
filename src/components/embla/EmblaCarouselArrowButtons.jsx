@@ -45,10 +45,12 @@ export const usePrevNextButtons = (emblaApi) => {
 const baseClasses =
   'flex items-center justify-center rounded-full border-2 border-[#64ffda] ' +
   'bg-[#64ffda]/10 hover:bg-[#64ffda]/30 text-[#64ffda] ' +
-  'disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200';
+  'disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 ' +
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a192f]';
 
 export const PrevButton = (props) => (
   <motion.button
+    type="button"
     aria-label="Previous slide"
     whileTap={{ scale: 0.7 }}
     transition={{ type: 'spring', stiffness: 260, damping: 16 }}
@@ -61,6 +63,7 @@ export const PrevButton = (props) => (
 
 export const NextButton = (props) => (
   <motion.button
+    type="button"
     aria-label="Next slide"
     className={`${baseClasses} w-10 h-10`}
     whileTap={{ scale: 0.7 }}

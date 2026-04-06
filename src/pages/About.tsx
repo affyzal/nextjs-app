@@ -38,7 +38,8 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="min-h-screen flex items-center"
+      aria-labelledby="about-heading"
+      className="min-h-screen flex items-center scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }} // animate on first 25% in-view
@@ -46,6 +47,7 @@ export default function About() {
     >
       <div className="w-full max-w-5xl mx-auto px-16">
         <motion.h2
+          id="about-heading"
           variants={item}
           className="flex items-center gap-2 text-2xl font-semibold text-zinc-50 mb-1 pt-20"
         >

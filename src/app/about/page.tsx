@@ -23,7 +23,11 @@ export default function AboutPage() {
   };
 
   return (
-    <main>
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-4 focus-visible:ring-offset-white"
+    >
       <Header />
       <section className="max-w-3xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-6">About Us</h1>

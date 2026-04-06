@@ -88,7 +88,8 @@ export default function Experience() {
   return (
     <motion.section
       id="experience"
-      className="flex flex-col items-start min-h-[auto] pb-16 md:min-h-screen md:items-center"
+      aria-labelledby="experience-heading"
+      className="flex flex-col items-start min-h-[auto] pb-16 md:min-h-screen md:items-center scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
@@ -96,6 +97,7 @@ export default function Experience() {
     >
       <div className="w-full max-w-5xl mx-auto px-6 sm:px-6">
         <motion.h2
+          id="experience-heading"
           variants={item}
           className="flex items-center gap-2 text-2xl font-semibold text-zinc-50 mb-8 pt-20"
         >
@@ -106,6 +108,7 @@ export default function Experience() {
           {/* Tab headers */}
           <Tab.List
             ref={listRef}
+            aria-label="Work history"
             className="flex gap-2 border-b border-zinc-700 mb-6 overflow-x-auto overflow-y-hidden md:overflow-x-visible relative"
           >
             {jobs.map((job, index) => (
@@ -113,11 +116,12 @@ export default function Experience() {
                 id={index.toString()}
                 key={index}
                 as={motion.button}
+                aria-label={`${job.title} at ${job.company}`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 16 }}
                 className={({ selected }) =>
-                  `relative px-4 py-2 text-sm font-medium rounded-t-md transition-colors ${
+                  `relative px-4 py-2 text-sm font-medium rounded-t-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a192f] ${
                     selected
                       ? 'text-[#64ffda]'
                       : 'text-zinc-500 hover:text-[#64ffda]'

@@ -49,7 +49,8 @@ export default function Work() {
   return (
     <motion.section
       id="work"
-      className="min-h-screen flex items-center scroll-mt-8"
+      aria-labelledby="work-heading"
+      className="min-h-screen flex items-center scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }} // animate on first 25% in-view
@@ -57,6 +58,7 @@ export default function Work() {
     >
       <div className="w-full max-w-5xl mx-auto px-16">
         <motion.h2
+          id="work-heading"
           variants={item}
           className="flex items-center gap-2 text-2xl font-semibold text-zinc-50 mb-8"
         >
