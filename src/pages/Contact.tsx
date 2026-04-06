@@ -94,9 +94,8 @@ export default function Contact({
           >
             I’m always interested in new opportunities, collaborations, or just
             chatting about tech and design. Whether you have a question, a
-            project, or just want to say hi - my inbox is open. Prefer to talk
-            live? Grab a 20-minute slot and we can walk through your idea
-            quickly.
+            project, or just want to say hi - my inbox is open. Alternatively, Prefer to talk
+            live? Grab a 20-minute slot and lets have a chat.
           </motion.p>
           <div className="mt-16 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:justify-start">
             {/* Email button */}
