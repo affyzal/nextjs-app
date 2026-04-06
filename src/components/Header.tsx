@@ -125,16 +125,16 @@ export default function Header() {
             />
           </motion.a>
           {/* Desktop nav */}
-          <nav className="hidden sm:flex gap-6 text-sm">
+          <nav className="hidden sm:flex gap-6 text-sm" aria-label="Primary navigation">
             <motion.a
               variants={item}
               href="#about"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda]"
             >
-              <span className="text-[#64ffda]">01.</span> About
+              <span aria-hidden="true" className="text-[#64ffda]">01.</span> About
             </motion.a>
             <motion.a
               variants={item}
@@ -142,9 +142,9 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda]"
             >
-              <span className="text-[#64ffda]">02.</span> Experience
+              <span aria-hidden="true" className="text-[#64ffda]">02.</span> Experience
             </motion.a>
             <motion.a
               variants={item}
@@ -152,9 +152,9 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda]"
             >
-              <span className="text-[#64ffda]">03.</span> Work
+              <span aria-hidden="true" className="text-[#64ffda]">03.</span> Work
             </motion.a>
             <motion.a
               variants={item}
@@ -162,9 +162,9 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="rounded px-4 py-2 hover:text-[#64ffda]"
+              className="rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda]"
             >
-              <span className="text-[#64ffda]">04.</span> Contact
+              <span aria-hidden="true" className="text-[#64ffda]">04.</span> Contact
             </motion.a>
             <motion.a
               variants={item}
@@ -173,16 +173,18 @@ export default function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 260, damping: 16 }}
-              className="border border-[#64ffda] rounded px-4 py-2 hover:text-[#64ffda]"
+              className="border border-[#64ffda] rounded px-4 py-2 hover:text-[#64ffda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda]"
               aria-label="Download resume"
             >
-              <span className="text-[#64ffda]">05.</span> Resume
+              <span aria-hidden="true" className="text-[#64ffda]">05.</span> Resume
             </motion.a>
           </nav>
           {/* Mobile menu toggle */}
           <button
             className="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
             onClick={toggleMobile}
           >
             {mobileOpen ? (
@@ -195,7 +197,7 @@ export default function Header() {
 
         {/* Mobile nav panel */}
         {mobileOpen && (
-          <nav className="sm:hidden bg-slate-900 border-t border-slate-800">
+          <nav id="mobile-nav" className="sm:hidden bg-slate-900 border-t border-slate-800" aria-label="Mobile navigation">
             <ul className="px-6 py-4 space-y-3">
               <li>
                 <Link

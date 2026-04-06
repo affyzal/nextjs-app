@@ -21,11 +21,17 @@ const EmblaCarousel = ({ slides, options }) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="embla">
+    <section className="embla" aria-label="Project showcase" aria-roledescription="carousel">
       <div className="embla__viewport overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex -ml-4">
           {slides?.map((slide, i) => (
-            <div key={i} className="embla__slide flex-[0_0_100%] min-w-0 pl-4">
+            <div
+              key={i}
+              className="embla__slide flex-[0_0_100%] min-w-0 pl-4"
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${i + 1} of ${slides.length}: ${slide?.title ?? 'Untitled'}`}
+            >
               <div
                 className="
                   grid grid-cols-1 md:grid-cols-3 items-center gap-8
@@ -68,7 +74,7 @@ const EmblaCarousel = ({ slides, options }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      View Project →
+                      View Project <span aria-hidden="true">→</span>
                     </motion.a>
                   )}
                 </div>
@@ -91,7 +97,7 @@ const EmblaCarousel = ({ slides, options }) => {
                       <iframe
                         className="w-full h-64 md:h-80 rounded-lg shadow-lg"
                         src={slide.video}
-                        title="YouTube video player"
+                        title={`${slide.title ?? 'Project'} demo video`}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                       ></iframe>
@@ -121,6 +127,8 @@ const EmblaCarousel = ({ slides, options }) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === selectedIndex ? 'true' : undefined}
               className={
                 index === selectedIndex
                   ? 'bg-[#64ffda]'

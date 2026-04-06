@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0a192f]">
+    <main id="main-content" className="min-h-screen bg-[#0a192f]">
       <Header />
 
       {/* Hero Section */}
@@ -66,12 +66,12 @@ export default function Home() {
             >
               Afzal Miah.
             </motion.h1>
-            <motion.h1
+            <motion.p
               variants={item}
               className="max-w-3xl text-6xl font-semibold tracking-tight text-zinc-400"
             >
               I like to build things.
-            </motion.h1>
+            </motion.p>
             <motion.p
               variants={item}
               className="max-w-xl text-lg leading-8 text-zinc-400"

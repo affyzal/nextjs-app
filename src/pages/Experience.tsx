@@ -110,7 +110,7 @@ export default function Experience() {
           >
             {jobs.map((job, index) => (
               <Tab
-                id={index.toString()}
+                id={`tab-${index}`}
                 key={index}
                 as={motion.button}
                 whileHover={{ scale: 1.02 }}
@@ -173,7 +173,7 @@ export default function Experience() {
                   >
                     {job.bullets.map((b) => (
                       <motion.li key={b} variants={detailItem}>
-                        <span className="text-[#64ffda]">▹</span> {b}
+                        <span className="text-[#64ffda]" aria-hidden="true">▹</span> {b}
                       </motion.li>
                     ))}
                   </motion.ul>

@@ -11,6 +11,7 @@ export default function Footer() {
             target="_blank"
             className="text-[#64ffda] transition-colors hover:underline font-semibold"
             href="https://github.com/affyzal/nextjs-app"
+            aria-label="View source on GitHub (opens in new tab)"
           >
             GitHub
           </a>
@@ -22,6 +23,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#64ffda] transition-colors"
+            aria-label="GitHub profile (opens in new tab)"
           >
             GitHub
           </a>
@@ -30,12 +32,14 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#64ffda] transition-colors"
+            aria-label="LinkedIn profile (opens in new tab)"
           >
             LinkedIn
           </a>
           <a
             href="mailto:affyzal@gmail.com"
             className="hover:text-[#64ffda] transition-colors"
+            aria-label="Send an email to Afzal"
           >
             Contact
           </a>

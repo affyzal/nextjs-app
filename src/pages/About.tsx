@@ -113,7 +113,7 @@ export default function About() {
                   variants={item}
                   className="flex items-center gap-2"
                 >
-                  <span className="text-[#64ffda]">▹</span> {t}
+                  <span className="text-[#64ffda]" aria-hidden="true">▹</span> {t}
                 </motion.li>
               ))}
             </motion.ul>

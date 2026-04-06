@@ -132,8 +132,8 @@ export default function Contact({
                 transition={{ type: 'spring', stiffness: 260, damping: 16 }}
                 className="inline-flex items-center gap-2 px-5 py-2 rounded bg-[#64ffda] text-[#0a192f] font-medium hover:bg-[#64ffda]/90 transition disabled:opacity-50 disabled:pointer-events-none"
               >
-                <CalendarClock className="size-5 shrink-0" aria-hidden />
-                {calReady ? 'Book 20 minutes' : 'Loading calendar…'}
+                <CalendarClock className="size-5 shrink-0" aria-hidden="true" />
+                <span aria-live="polite">{calReady ? 'Book 20 minutes' : 'Loading calendar…'}</span>
               </motion.button>
             ) : null}
 
@@ -152,7 +152,7 @@ export default function Contact({
               className="w-10 h-10 flex items-center justify-center rounded border border-[#64ffda]/70 bg-[#0077B5] hover:bg-[#64ffda] text-white transition"
               aria-label="LinkedIn"
             >
-              <FaLinkedin size={20} />
+              <FaLinkedin size={20} aria-hidden="true" />
             </motion.a>
 
             {/* GitHub Button */}
@@ -170,7 +170,7 @@ export default function Contact({
               className="w-10 h-10 flex items-center justify-center rounded border border-[#64ffda]/70 bg-[#171515] hover:bg-[#64ffda] text-white hover:text-[#0a192f] transition"
               aria-label="GitHub"
             >
-              <FaGithub />
+              <FaGithub aria-hidden="true" />
             </motion.a>
           </div>
         </div>
